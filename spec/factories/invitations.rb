@@ -1,7 +1,7 @@
 FactoryBot.define do
   factory :invitation do
-    email { "MyString" }
-    message { "MyText" }
-    cycle { nil }
+    email { Faker::Internet.free_email }
+    message { Faker::Lorem.sentence }
+    cycle
   end
 end
