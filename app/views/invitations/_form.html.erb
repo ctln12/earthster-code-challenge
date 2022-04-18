@@ -1,15 +1,23 @@
-<%= form_with model: [cycle, invitation], html: {id: "new-invitation" }, local: false do |f| %>
-  <%= f.label :email, "Share cycle with a new Customer" %>
-  <%= f.text_field :email, placeholder: "Email address...*" %>
-  <div id="email-error-messages"></div>
+<%= form_with model: [cycle, invitation], html: {id: "new-invitation", class: "modal__form" }, local: false do |f| %>
+  <div class="modal__form-group">
+    <%= f.label :email, "Share cycle with a new Customer", class: "modal__form-label" %>
+    <%= f.text_field :email, placeholder: "Email address...*", class: "modal__form-input" %>
+    <div id="email-error-messages"></div>
+  </div>
 
-  <%= f.label :message, "Want to include a message with the invite?" %>
-  <%= f.text_area :message, placeholder: "Please enter your message..." %>
+  <div class="modal__form-group">
+    <%= f.label :message, "Want to include a message with the invite?", class: "modal__form-label" %>
+    <%= f.text_area :message, placeholder: "Please enter your message...", class: "modal__form-area" %>
+  </div>
 
-  <p>You are about to share with the individuals above:</p>
-  <ul>
-    <li><%= @cycle.name %></li>
-  </ul>
+  <div class="modal__cycle">
+    <p class="modal__cycle-text">You are about to share with the individuals above:</p>
+    <ul class="modal__cycle__list">
+      <li class="modal__cycle-name"><%= @cycle.name %></li>
+    </ul>
+  </div>
 
-  <%= f.submit "Send invitation", class: "form__submit-button" %>
+  <div class="modal__form-button">
+    <%= f.submit "Send invitation", class: "modal__form-submit" %>
+  </div>
 <% end %>
