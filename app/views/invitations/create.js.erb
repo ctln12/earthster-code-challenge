@@ -1,6 +1,13 @@
 <% if @invitation.persisted? %>
   document.getElementById("modal").closeModal();
   document.getElementById("flash").innerHTML = "<%= j render "shared/flash", notice: "Invitation successfully sent!" %>";
+  setTimeout(() => {
+    console.log("this is the first message")
+    flashElement = document.getElementById("flash");
+    flashElement.setAttribute('hidden', true);
+    flashElement.innerHTML = '';
+  }, 3000);
 <% else %>
+  document.querySelector("#modal .modal__content").innerHTML = "<%= j render "invitations/form", cycle: @cycle, invitation: @invitation %>";
   document.getElementById("email-error-messages").innerHTML = "<%= j render "invitations/form_errors", invitation: @invitation, attribute: :email %>";
 <% end %>

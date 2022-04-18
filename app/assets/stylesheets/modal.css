@@ -110,3 +110,14 @@
   background-color: var(--primary-color);
   cursor: pointer;
 }
+
+.field_with_errors .modal__form-input {
+  border: 2px solid red;
+}
+
+.modal__form-errors {
+  margin-block-start: 0.6em;
+  margin-block-end: 0;
+  font-size: 0.8em;
+  color: red;
+}
