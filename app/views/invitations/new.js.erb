@@ -1,0 +1,3 @@
+document.querySelector("#modal .modal__content").innerHTML = "<%= j render "invitations/form", cycle: @cycle, invitation: @invitation %>";
+
+document.getElementById("modal").openModal();

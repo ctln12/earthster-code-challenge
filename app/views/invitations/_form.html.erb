@@ -1,0 +1,14 @@
+<%= form_with model: [cycle, invitation], html: {id: "new-invitation" }, local: false do |f| %>
+  <%= f.label :email, "Share cycle with a new Customer" %>
+  <%= f.text_field :email, placeholder: "Email address...*" %>
+
+  <%= f.label :message, "Want to include a message with the invite?" %>
+  <%= f.text_area :message, placeholder: "Please enter your message..." %>
+
+  <p>You are about to share with the individuals above:</p>
+  <ul>
+    <li><%= @cycle.name %></li>
+  </ul>
+
+  <%= f.submit "Send invitation", class: "form__submit-button" %>
+<% end %>
