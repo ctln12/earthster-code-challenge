@@ -1,6 +1,7 @@
 <%= form_with model: [cycle, invitation], html: {id: "new-invitation" }, local: false do |f| %>
   <%= f.label :email, "Share cycle with a new Customer" %>
   <%= f.text_field :email, placeholder: "Email address...*" %>
+  <div id="email-error-messages"></div>
 
   <%= f.label :message, "Want to include a message with the invite?" %>
   <%= f.text_area :message, placeholder: "Please enter your message..." %>
