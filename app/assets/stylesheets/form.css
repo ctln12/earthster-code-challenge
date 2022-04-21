@@ -1,0 +1,18 @@
+.form__container {
+  background-color: #262626;
+  border-radius: 3px;
+  width: 100%;
+  max-width: 25rem;
+  padding: 2rem;
+}
+
+.form__back-button {
+  text-align: center;
+  font-weight: 300;
+  font-size: 0.7rem;
+  margin-top: 0.5rem;
+}
+
+.form__back-button a:hover {
+  text-decoration: underline;
+}
