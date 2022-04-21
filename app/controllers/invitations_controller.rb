@@ -13,9 +13,12 @@ class InvitationsController < ApplicationController
     @cycle = Cycle.find(params[:cycle_id])
     @invitation = Invitation.new(invitation_params)
     @invitation.cycle = @cycle
-    @invitation.save
-
     respond_to do |format|
+      if @invitation.save
+        format.html { redirect_to root_path, notice: 'Invitation successfully sent!' }
+      else
+        format.html { render :new }
+      end
       format.js
     end
   end
